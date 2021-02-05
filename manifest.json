@@ -1,0 +1,21 @@
+{
+  "name": "lk sgugit",
+  "version": "1.0",
+  "author": "Sergey Ragulev",
+  "homepage_url": "https://vk.com/nameshelest",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [ "*://lko.sgugit.ru/*" ],
+      "js": [ "injector.js" ],
+	  "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "jquery.min.js",
+    "selectize.min.js",
+    "selectize.css",
+    "customStyle.css",
+    "mySelectize.js"
+  ]
+}
