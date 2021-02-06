@@ -1,25 +1,25 @@
 $(document).ready(function(){
-    $('#report-type').selectize({
-        create: true,
-        sortField: 'text'
-    })
-    $('#discipline').selectize({
-        create: true,
-        sortField: 'text'
-    });
-    $('#teacher').selectize({
-        create: true,
-        sortField: 'text'
-    })
-    $('#Caphedre').selectize({
-        create: true,
-        sortField: 'text'
+    $.each([
+        "#report-type",
+        "#discipline",
+        "#teacher",
+        "#Caphedre"
+    ], function (index, sel) {
+        $(sel).val("").selectize({
+            create: true,
+            sortField: 'text',
+        })
     })
 
-    $('<input/>',{
-        type: 'text',
+    $.each($(".column-6"), function (index, el) {
+        el.innerText = el.innerText.replace("Кафедра ", "")
+        el.innerText = el.innerText.charAt(0).toUpperCase() + el.innerText.slice(1);
+    })
+
+    $("<input/>", {
+        type: "text",
         id: "searchInput"
-    }).appendTo('.header-add-content')
+    }).appendTo(".header-add-content")
         .keyup(function() {
             let inputVal = $(this).val().toLowerCase()
 

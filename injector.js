@@ -11,7 +11,7 @@ let css = [
 js.forEach(function (file) {
     let jsScript = document.createElement("script")
     jsScript.setAttribute("src", chrome.extension.getURL(file))
-    document.body.appendChild(jsScript)
+    document.head.appendChild(jsScript)
 })
 
 css.forEach(function (file) {
